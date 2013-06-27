@@ -130,7 +130,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Attack.cs" />
     <Compile Include="Critter.cs" />
+    <Compile Include="Element.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="GamePage.xaml.cs">
       <DependentUpon>GamePage.xaml</DependentUpon>
