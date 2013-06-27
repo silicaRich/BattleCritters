@@ -136,6 +136,15 @@
       <DependentUpon>GamePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Game1.cs" />
+    <Compile Include="GameScreenManagement\CinematicsScreen.cs" />
+    <Compile Include="GameScreenManagement\GameScreen.cs" />
+    <Compile Include="GameScreenManagement\MenuScreen.cs" />
+    <Compile Include="GameScreenManagement\Objects\DrawableButton.cs" />
+    <Compile Include="GameScreenManagement\Objects\DrawableImage.cs" />
+    <Compile Include="GameScreenManagement\Objects\DrawableObject.cs" />
+    <Compile Include="GameScreenManagement\Objects\DrawableText.cs" />
+    <Compile Include="GameScreenManagement\PauseMenuScreen.cs" />
+    <Compile Include="GameScreenManagement\Screen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trainer.cs" />
   </ItemGroup>
