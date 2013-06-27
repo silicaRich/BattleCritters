@@ -105,6 +105,8 @@ namespace BattleCrittersMetro
             //increase joystick size
             //add in a reload button
             //
+
+
             DrawableImage crossHair = new DrawableImage();
             crossHair.texture = gamePage.contentManager.Load<Texture2D>("crossHair");
             crossHair.color = new Color(255, 255, 255, 128);
