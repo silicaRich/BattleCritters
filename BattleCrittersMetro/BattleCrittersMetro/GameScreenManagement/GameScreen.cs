@@ -9,7 +9,7 @@ namespace BattleCrittersMetro
     public class GameScreen : Screen
     {
 
-        public GameScreen(GamePage gamePage) : base()
+        public GameScreen(Game1 gamePage) : base()
         {
 
             #region screen movement, obsolete.
