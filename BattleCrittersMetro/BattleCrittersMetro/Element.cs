@@ -6,8 +6,20 @@ using System.Threading.Tasks;
 
 namespace BattleCrittersMetro
 {
-    class Element : GameObject
+    public enum ElementType
     {
-        public String Name;
+        Fire, 
+        Water, 
+        Lightening,
+        Wind,
+        Posion,
+        Ice,
+        Grass
     }
+
+    public class Element : GameObject
+    {
+        public ElementType elementType;   
+    }
+
 }
