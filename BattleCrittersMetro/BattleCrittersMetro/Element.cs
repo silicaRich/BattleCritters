@@ -19,7 +19,16 @@ namespace BattleCrittersMetro
 
     public class Element : GameObject
     {
-        public ElementType elementType;   
+        public ElementType elementType;
+
+        public Element()
+        {
+        }
+
+        public Element(ElementType elementType)
+        {
+            this.elementType = elementType;
+        }
     }
 
 }
