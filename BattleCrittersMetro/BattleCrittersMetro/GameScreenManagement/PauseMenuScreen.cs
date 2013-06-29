@@ -112,5 +112,12 @@ namespace BattleCrittersMetro
         private void PauseMenuScreenInitalized(GamePage gamePage)
         {
         }
+
+        public override void Draw(GameTime gameTime, SpriteBatch sb)
+        {
+            //draw black background
+            sb.Draw(TextureCache.blackBg, Vector2.Zero, bgColor);
+            base.Draw(gameTime, sb);
+        }
     }
 }

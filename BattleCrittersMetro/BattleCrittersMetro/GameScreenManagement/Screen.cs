@@ -29,8 +29,6 @@ namespace BattleCrittersMetro
 
         public virtual void Draw(GameTime gameTime, SpriteBatch sb)
         {
-            //draw black background
-            sb.Draw(TextureCache.blackBg, Vector2.Zero, bgColor);
             foreach (KeyValuePair<string, DrawableObject> s2d in screenObjs)
                 s2d.Value.Draw(gameTime, sb);
         }

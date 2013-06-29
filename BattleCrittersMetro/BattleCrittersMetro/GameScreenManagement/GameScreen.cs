@@ -11,9 +11,9 @@ namespace BattleCrittersMetro
         public Trainer trainer;
 
         //please collapse this constructor, it has reuseable code in it. Refer to the Game Screen Initalized Method
-        public GameScreen(Game1 gamePage) : base()
+        public GameScreen(Game1 game) : base()
         {
-            GameScreenInitialized(gamePage);
+            GameScreenInitialized(game);
             #region screen movement, obsolete.
 
             //DrawableButton moveCamTop = new DrawableButton();

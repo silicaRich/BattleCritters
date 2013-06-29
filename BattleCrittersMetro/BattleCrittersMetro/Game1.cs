@@ -34,6 +34,9 @@ namespace BattleCrittersMetro
             // TODO: Add your initialization logic here
             graphicsDevice = _graphics.GraphicsDevice;
             spriteBatch = new SpriteBatch(graphicsDevice);
+            this.screens = new List<Screen>();
+            this.gameScreen = new GameScreen(this);
+            this.screens.Add(gameScreen);
             base.Initialize();
         }
 
