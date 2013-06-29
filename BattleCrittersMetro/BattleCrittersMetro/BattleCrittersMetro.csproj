@@ -148,6 +148,7 @@
     <Compile Include="GameScreenManagement\PauseMenuScreen.cs" />
     <Compile Include="GameScreenManagement\Screen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextureCache.cs" />
     <Compile Include="Trainer.cs" />
   </ItemGroup>
   <ItemGroup>
