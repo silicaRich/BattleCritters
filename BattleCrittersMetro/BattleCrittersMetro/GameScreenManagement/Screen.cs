@@ -17,17 +17,17 @@ namespace BattleCrittersMetro
             screenObjs = new Dictionary<string, DrawableObject>();
         }
 
-        public virtual void Update(GamePage gamePage, GameTimerEventArgs gameTime)
+        public virtual void Update(Game1 game, GameTime gameTime)
         {
             HandleInput();
             foreach (KeyValuePair<string, DrawableObject> kvp in screenObjs)
             {
                 DrawableObject d = kvp.Value;
-                d.Update(gamePage, gameTime);
+                d.Update(game, gameTime);
             }
         }
 
-        public virtual void Draw(GameTimerEventArgs gameTime, SpriteBatch sb)
+        public virtual void Draw(GameTime gameTime, SpriteBatch sb)
         {
             //draw black background
             sb.Draw(TextureCache.blackBg, Vector2.Zero, bgColor);

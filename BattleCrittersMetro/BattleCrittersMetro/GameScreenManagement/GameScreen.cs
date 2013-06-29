@@ -218,9 +218,9 @@ namespace BattleCrittersMetro
 
         }
         //please collapse this constructor, it has reuseable code in it. Refer to the GameScreenUpdated Method
-        public override void Update(GamePage gamePage, GameTimerEventArgs gameTime)
+        public override void Update(Game1 game, GameTime gameTime)
         {
-            GameScreenUpdated(gamePage, gameTime);
+            GameScreenUpdated(game, gameTime);
             ////update health
             //((DrawableText)screenObjs["health"]).text = "Health: " + gamePage.player.life;
             ////update ammo
@@ -238,10 +238,10 @@ namespace BattleCrittersMetro
 
 
             ////((DrawableText)this.screenObjs["charPosition"]).text = "Bounding Sphere Center : " + gamePage.player.boundingBox.Value.Min.ToString();
-            //base.Update(gamePage, gameTime);
+            base.Update(game, gameTime);
         }
 
-        public void GameScreenUpdated(GamePage gamePage, GameTimerEventArgs gameTime)
+        public void GameScreenUpdated(Game1 game, GameTime gameTime)
         {
             //when the game screen is updated
 

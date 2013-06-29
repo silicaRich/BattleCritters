@@ -14,12 +14,12 @@ namespace BattleCrittersMetro
         {
         }
 
-        public override void Draw(GameTimerEventArgs gameTime, SpriteBatch sb)
+        public override void Draw(GameTime gameTime, SpriteBatch sb)
         {
             sb.DrawString(font, text, position, textColor);
         }
 
-        public override void Update(GamePage gamePage, GameTimerEventArgs gameTime)
+        public override void Update(Game game, GameTime gameTime)
         {
             if (this.updateText != null)
                 this.updateText(this, new UpdateEventArgs());

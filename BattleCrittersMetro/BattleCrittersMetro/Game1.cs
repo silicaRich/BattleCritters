@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 
 namespace BattleCrittersMetro
 {
@@ -9,7 +10,12 @@ namespace BattleCrittersMetro
     public class Game1 : Game
     {
         GraphicsDeviceManager _graphics;
+        public GraphicsDevice graphicsDevice;
         SpriteBatch _spriteBatch;
+        public List<Screen> screens; //all screens
+        public GameScreen gameScreen; //game screen ref in screens
+        public PauseMenuScreen pauseMenuScreen; //pause screen ref in screens
+        public SpriteBatch spriteBatch;
 
         public Game1()
         {
@@ -26,7 +32,8 @@ namespace BattleCrittersMetro
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            graphicsDevice = _graphics.GraphicsDevice;
+            spriteBatch = new SpriteBatch(graphicsDevice);
             base.Initialize();
         }
 
@@ -59,7 +66,7 @@ namespace BattleCrittersMetro
         protected override void Update(GameTime gameTime)
         {
             // TODO: Add your update logic here
-
+            screens[screens.Count - 1].Update(this, gameTime); //get the last screen and update it, do not update the other screens on the stack.
             base.Update(gameTime);
         }
 
@@ -69,10 +76,21 @@ namespace BattleCrittersMetro
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            graphicsDevice.SetRenderTarget(null); // set our target to screen
+            graphicsDevice.Clear(Color.Black);
             // TODO: Add your drawing code here
+            graphicsDevice.DepthStencilState = DepthStencilState.Default;
 
+
+            spriteBatch.GraphicsDevice.DepthStencilState = new DepthStencilState() { DepthBufferEnable = true };
+            spriteBatch.Begin();
+
+            //2d animations go here.
+
+            foreach (Screen s in screens)
+                s.Draw(gameTime, spriteBatch);
+
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }

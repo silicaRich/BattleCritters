@@ -16,11 +16,11 @@ namespace BattleCrittersMetro
         public virtual void OnUnClick(Vector2 clickPoint)
         {
         }
-        public virtual void Draw(GameTimerEventArgs gameTime, SpriteBatch sb)
+        public virtual void Draw(GameTime gameTime, SpriteBatch sb)
         {
         }
 
-        public virtual void Update(GamePage gamePage, GameTimerEventArgs gameTime)
+        public virtual void Update(Game game, GameTime gameTime)
         {
         }
         //This is a class which describes the event to the class that recieves it.

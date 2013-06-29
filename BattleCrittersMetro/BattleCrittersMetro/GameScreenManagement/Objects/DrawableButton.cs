@@ -44,7 +44,7 @@ namespace BattleCrittersMetro
             drawColor = baseColor;
         }
 
-        public override void Draw(GameTimerEventArgs gameTime, SpriteBatch sb)
+        public override void Draw(GameTime gameTime, SpriteBatch sb)
         {
             sb.Draw(drawTex, area, drawColor);
         }

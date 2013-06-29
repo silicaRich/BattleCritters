@@ -13,7 +13,7 @@ namespace BattleCrittersMetro
         {
         }
 
-        public override void Draw(GameTimerEventArgs gameTime, SpriteBatch sb)
+        public override void Draw(GameTime gameTime, SpriteBatch sb)
         {
             sb.Draw(texture, area, color);
         }
