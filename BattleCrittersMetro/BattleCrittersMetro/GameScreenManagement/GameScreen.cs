@@ -8,6 +8,8 @@ namespace BattleCrittersMetro
 {
     public class GameScreen : Screen
     {
+        public Trainer trainer;
+
         //please collapse this constructor, it has reuseable code in it. Refer to the Game Screen Initalized Method
         public GameScreen(Game1 gamePage) : base()
         {
@@ -211,11 +213,11 @@ namespace BattleCrittersMetro
         public void GameScreenInitialized(Game1 game)
         {
             //when the game screen is initalized
-
+            trainer = Trainer.TrainerTest();
 
 
         }
-        //please collapse this constructor, it has reuseable code in it. Refer to the Game Screen Initalized Method
+        //please collapse this constructor, it has reuseable code in it. Refer to the GameScreenUpdated Method
         public override void Update(GamePage gamePage, GameTimerEventArgs gameTime)
         {
             GameScreenUpdated(gamePage, gameTime);

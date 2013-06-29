@@ -34,9 +34,9 @@ namespace BattleCrittersMetro
             };
 
             trainer.Critters = new Critter [5] ;
-            trainer.Critters[0] = new Critter ("Turtle")
-            trainer.Critters[1] = "Snake";
-            trainer.Critters[2] = "Eagle";
+            /*trainer.Critters[0] = ;
+            trainer.Critters[1] = ;
+            trainer.Critters[2] = ;*/
             return trainer;
         }
 

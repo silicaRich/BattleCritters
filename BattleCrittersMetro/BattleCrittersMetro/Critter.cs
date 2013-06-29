@@ -23,7 +23,18 @@ namespace BattleCrittersMetro
 
         }
 
-        public static CritterTest
+        public static Critter CritterTest(){
+
+            Critter Turtle = new Critter()
+            {
+                Element = "Grass",
+                Health =
+                Mana =
+                Attack =
+                Defense = 
+                Speed = 
+                ID = new Guid(byte[]ID);
+            }
 
     }
 
