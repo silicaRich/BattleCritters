@@ -8,10 +8,10 @@ namespace BattleCrittersMetro
 {
     public class GameScreen : Screen
     {
-
+        //please collapse this constructor, it has reuseable code in it. Refer to the Game Screen Initalized Method
         public GameScreen(Game1 gamePage) : base()
         {
-
+            GameScreenInitialized(gamePage);
             #region screen movement, obsolete.
 
             //DrawableButton moveCamTop = new DrawableButton();
@@ -107,128 +107,142 @@ namespace BattleCrittersMetro
             //
 
 
-            DrawableImage crossHair = new DrawableImage();
-            crossHair.texture = gamePage.contentManager.Load<Texture2D>("crossHair");
-            crossHair.color = new Color(255, 255, 255, 128);
-            crossHair.area = new Rectangle(384, 224, crossHair.texture.Width, crossHair.texture.Height);
-            screenObjs.Add("crossHair", crossHair);
+            //DrawableImage crossHair = new DrawableImage();
+            //crossHair.texture = gamePage.contentManager.Load<Texture2D>("crossHair");
+            //crossHair.color = new Color(255, 255, 255, 128);
+            //crossHair.area = new Rectangle(384, 224, crossHair.texture.Width, crossHair.texture.Height);
+            //screenObjs.Add("crossHair", crossHair);
 
-            DrawableButton menuButton = new DrawableButton();
-            menuButton.baseTex =gamePage.contentManager.Load<Texture2D>("MenuButton");
-            menuButton.clickedTex = menuButton.baseTex;
-            menuButton.drawTex = menuButton.baseTex;
+            //DrawableButton menuButton = new DrawableButton();
+            //menuButton.baseTex =gamePage.contentManager.Load<Texture2D>("MenuButton");
+            //menuButton.clickedTex = menuButton.baseTex;
+            //menuButton.drawTex = menuButton.baseTex;
 
-            menuButton.baseColor = new Color(255, 255, 255, 128);
-            menuButton.clickedColor = new Color(255, 255, 255, 200);
-            menuButton.drawColor = menuButton.baseColor;
+            //menuButton.baseColor = new Color(255, 255, 255, 128);
+            //menuButton.clickedColor = new Color(255, 255, 255, 200);
+            //menuButton.drawColor = menuButton.baseColor;
 
-            menuButton.area = new Rectangle(336, 403, menuButton.baseTex.Width, menuButton.baseTex.Height);
+            //menuButton.area = new Rectangle(336, 403, menuButton.baseTex.Width, menuButton.baseTex.Height);
 
-            menuButton.UnClick += (s, e2) =>
-            {
-                if (gamePage.pauseMenuScreen == null)
-                    gamePage.pauseMenuScreen = new PauseMenuScreen(gamePage);
+            //menuButton.UnClick += (s, e2) =>
+            //{
+            //    if (gamePage.pauseMenuScreen == null)
+            //        gamePage.pauseMenuScreen = new PauseMenuScreen(gamePage);
 
-                gamePage.screens.Add(gamePage.pauseMenuScreen);
-            };
+            //    gamePage.screens.Add(gamePage.pauseMenuScreen);
+            //};
 
-            screenObjs.Add("menuButton", menuButton);
+            //screenObjs.Add("menuButton", menuButton);
 
-            DrawableButton leftStick = new DrawableButton();
-            leftStick.baseTex =gamePage.contentManager.Load<Texture2D>("circleObj");
-            leftStick.clickedTex = leftStick.baseTex;
-            leftStick.drawTex = leftStick.baseTex;
+            //DrawableButton leftStick = new DrawableButton();
+            //leftStick.baseTex =gamePage.contentManager.Load<Texture2D>("circleObj");
+            //leftStick.clickedTex = leftStick.baseTex;
+            //leftStick.drawTex = leftStick.baseTex;
 
-            leftStick.baseColor = new Color(255, 255, 255, 128);
-            leftStick.clickedColor = new Color(255, 255, 255, 200);
-            leftStick.drawColor = leftStick.baseColor;
+            //leftStick.baseColor = new Color(255, 255, 255, 128);
+            //leftStick.clickedColor = new Color(255, 255, 255, 200);
+            //leftStick.drawColor = leftStick.baseColor;
 
-            leftStick.area = new Rectangle(2, 382, leftStick.baseTex.Width, leftStick.baseTex.Height);
-
-
-            leftStick.Click += (s, e2) =>
-            {
-                FreeCamera fc = gamePage.camera as FreeCamera;
-                Vector2 tappedPoint = e2.clickPoint;
-                Vector3 moveVector = new Vector3(tappedPoint.X - leftStick.area.Center.X, 0f, tappedPoint.Y - leftStick.area.Center.Y);
-                fc.Move(moveVector);
-            };
-
-            screenObjs.Add("leftStick", leftStick);
+            //leftStick.area = new Rectangle(2, 382, leftStick.baseTex.Width, leftStick.baseTex.Height);
 
 
-            DrawableButton rightStick = new DrawableButton();
-            rightStick.baseTex =gamePage.contentManager.Load<Texture2D>("circleObj");
-            rightStick.clickedTex = rightStick.baseTex;
-            rightStick.drawTex = rightStick.baseTex;
+            //leftStick.Click += (s, e2) =>
+            //{
+            //    FreeCamera fc = gamePage.camera as FreeCamera;
+            //    Vector2 tappedPoint = e2.clickPoint;
+            //    Vector3 moveVector = new Vector3(tappedPoint.X - leftStick.area.Center.X, 0f, tappedPoint.Y - leftStick.area.Center.Y);
+            //    fc.Move(moveVector);
+            //};
 
-            rightStick.baseColor = new Color(255, 255, 255, 128);
-            rightStick.clickedColor = new Color(255, 255, 255, 200);
-            rightStick.drawColor = rightStick.baseColor;
-
-            rightStick.area = new Rectangle(702, 382, rightStick.baseTex.Width, rightStick.baseTex.Height);
-
-            rightStick.Click += (s, e2) =>
-            {
-                FreeCamera fc = gamePage.camera as FreeCamera;
-                Vector2 tappedPoint = e2.clickPoint;
-                Vector2 rotateVector = new Vector2(tappedPoint.X - rightStick.area.Center.X, tappedPoint.Y - rightStick.area.Center.Y);
-                fc.Rotate(rotateVector.X * -1f, rotateVector.Y * -1f);
-            };
-            screenObjs.Add("rightStick", rightStick);
+            //screenObjs.Add("leftStick", leftStick);
 
 
-            DrawableButton rightStickDeadZone = new DrawableButton();
-            rightStickDeadZone.baseTex =gamePage.contentManager.Load<Texture2D>("joystickDeadZone");
-            rightStickDeadZone.clickedTex = rightStickDeadZone.baseTex;
-            rightStickDeadZone.drawTex = rightStickDeadZone.baseTex;
+            //DrawableButton rightStick = new DrawableButton();
+            //rightStick.baseTex =gamePage.contentManager.Load<Texture2D>("circleObj");
+            //rightStick.clickedTex = rightStick.baseTex;
+            //rightStick.drawTex = rightStick.baseTex;
 
-            rightStickDeadZone.baseColor = new Color(255, 255, 255, 128);
-            rightStickDeadZone.clickedColor = new Color(255, 255, 255, 200);
-            rightStickDeadZone.drawColor = rightStickDeadZone.baseColor;
+            //rightStick.baseColor = new Color(255, 255, 255, 128);
+            //rightStick.clickedColor = new Color(255, 255, 255, 200);
+            //rightStick.drawColor = rightStick.baseColor;
 
-            rightStickDeadZone.area = new Rectangle(743, 423, rightStickDeadZone.baseTex.Width, rightStickDeadZone.baseTex.Height);
+            //rightStick.area = new Rectangle(702, 382, rightStick.baseTex.Width, rightStick.baseTex.Height);
 
-            rightStickDeadZone.UnClick += (s, e2) =>
-            {
-                FreeCamera fc = gamePage.camera as FreeCamera;
-                Bullet b = new Bullet(gamePage.bullet, fc.Position, fc.rotation, new Vector3(0.1f, 0.1f, 0.1f), false, true, (float)gamePage.gameTime.TotalTime.TotalMilliseconds);
-                gamePage.gameObjects.Add(b);
-            };
-            screenObjs.Add("rightStickDeadZone", rightStickDeadZone);
+            //rightStick.Click += (s, e2) =>
+            //{
+            //    FreeCamera fc = gamePage.camera as FreeCamera;
+            //    Vector2 tappedPoint = e2.clickPoint;
+            //    Vector2 rotateVector = new Vector2(tappedPoint.X - rightStick.area.Center.X, tappedPoint.Y - rightStick.area.Center.Y);
+            //    fc.Rotate(rotateVector.X * -1f, rotateVector.Y * -1f);
+            //};
+            //screenObjs.Add("rightStick", rightStick);
 
-            DrawableText health = new DrawableText();
-            health.position = new Vector2(0f, 0f);
-            screenObjs.Add("health", health);
-            health.textColor = Color.Red;
 
-            DrawableText ammo = new DrawableText();
-            ammo.position = new Vector2(0f, 20f);
-            screenObjs.Add("ammo", ammo);
-            ammo.textColor = Color.Blue;
+            //DrawableButton rightStickDeadZone = new DrawableButton();
+            //rightStickDeadZone.baseTex =gamePage.contentManager.Load<Texture2D>("joystickDeadZone");
+            //rightStickDeadZone.clickedTex = rightStickDeadZone.baseTex;
+            //rightStickDeadZone.drawTex = rightStickDeadZone.baseTex;
+
+            //rightStickDeadZone.baseColor = new Color(255, 255, 255, 128);
+            //rightStickDeadZone.clickedColor = new Color(255, 255, 255, 200);
+            //rightStickDeadZone.drawColor = rightStickDeadZone.baseColor;
+
+            //rightStickDeadZone.area = new Rectangle(743, 423, rightStickDeadZone.baseTex.Width, rightStickDeadZone.baseTex.Height);
+
+            //rightStickDeadZone.UnClick += (s, e2) =>
+            //{
+            //    FreeCamera fc = gamePage.camera as FreeCamera;
+            //    Bullet b = new Bullet(gamePage.bullet, fc.Position, fc.rotation, new Vector3(0.1f, 0.1f, 0.1f), false, true, (float)gamePage.gameTime.TotalTime.TotalMilliseconds);
+            //    gamePage.gameObjects.Add(b);
+            //};
+            //screenObjs.Add("rightStickDeadZone", rightStickDeadZone);
+
+            //DrawableText health = new DrawableText();
+            //health.position = new Vector2(0f, 0f);
+            //screenObjs.Add("health", health);
+            //health.textColor = Color.Red;
+
+            //DrawableText ammo = new DrawableText();
+            //ammo.position = new Vector2(0f, 20f);
+            //screenObjs.Add("ammo", ammo);
+            //ammo.textColor = Color.Blue;
         }
 
+        public void GameScreenInitialized(Game1 game)
+        {
+            //when the game screen is initalized
+
+
+
+        }
+        //please collapse this constructor, it has reuseable code in it. Refer to the Game Screen Initalized Method
         public override void Update(GamePage gamePage, GameTimerEventArgs gameTime)
         {
-            //update health
-            ((DrawableText)screenObjs["health"]).text = "Health: " + gamePage.player.life;
-            //update ammo
-            ((DrawableText)screenObjs["ammo"]).text = "Ammo: " + gamePage.player.currAmo + "/" + gamePage.player.totalAmo;
+            GameScreenUpdated(gamePage, gameTime);
+            ////update health
+            //((DrawableText)screenObjs["health"]).text = "Health: " + gamePage.player.life;
+            ////update ammo
+            //((DrawableText)screenObjs["ammo"]).text = "Ammo: " + gamePage.player.currAmo + "/" + gamePage.player.totalAmo;
 
-            //
-            gamePage.camera.Update(gamePage, gameTime);
-            gamePage.player.prevPosition = gamePage.player.Position;
-            for (int i = 0; i < gamePage.gameObjects.Count; i++)
-            {
-                gamePage.gameObjects[i].Update(gamePage, gameTime);
-            }
-            //foreach (CustomModel cm in gamePage.gameObjects)
-            //    cm.Update(gamePage, gameTime);
+            ////
+            //gamePage.camera.Update(gamePage, gameTime);
+            //gamePage.player.prevPosition = gamePage.player.Position;
+            //for (int i = 0; i < gamePage.gameObjects.Count; i++)
+            //{
+            //    gamePage.gameObjects[i].Update(gamePage, gameTime);
+            //}
+            ////foreach (CustomModel cm in gamePage.gameObjects)
+            ////    cm.Update(gamePage, gameTime);
 
 
-            //((DrawableText)this.screenObjs["charPosition"]).text = "Bounding Sphere Center : " + gamePage.player.boundingBox.Value.Min.ToString();
-            base.Update(gamePage, gameTime);
+            ////((DrawableText)this.screenObjs["charPosition"]).text = "Bounding Sphere Center : " + gamePage.player.boundingBox.Value.Min.ToString();
+            //base.Update(gamePage, gameTime);
         }
 
+        public void GameScreenUpdated(GamePage gamePage, GameTimerEventArgs gameTime)
+        {
+            //when the game screen is updated
+
+        }
     }
 }
