@@ -16,5 +16,15 @@ namespace BattleCrittersMetro
         public int Speed;
         public Attack[] Attacks;
         public Guid ID;
+
+
+        public Critter()
+        {
+
+        }
+
+        public static CritterTest
+
     }
+
 }

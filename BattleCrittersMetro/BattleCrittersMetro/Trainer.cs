@@ -13,9 +13,32 @@ namespace BattleCrittersMetro
         public char Gender;
         public int Money;
         public Guid ID;
-        public Vector2 Postion;
+        public Vector2 Position;
         public string Location;
         public Critter[] Critters;
+
+        public Trainer()
+        {
+
+        }
+
+        public static Trainer TrainerTest(){
+
+            Trainer trainer = new Trainer()
+            {
+                Name = "Bob Saget",
+                Gender = 'M',
+                Money =  500,
+                Position = new Vector2(0f, 0f),
+                Location = "Home",
+            };
+
+            trainer.Critters = new Critter [5] ;
+            trainer.Critters[0] = new Critter ("Turtle")
+            trainer.Critters[1] = "Snake";
+            trainer.Critters[2] = "Eagle";
+            return trainer;
+        }
 
     }
 }
