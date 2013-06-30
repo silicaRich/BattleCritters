@@ -31,7 +31,7 @@ namespace BattleCrittersMetro
                 Gender = 'M',
                 Money =  500,
                 Position = new Vector2(0f, 0f),
-                Location = "Home",
+                Location = "San Fran",
             };
 
             trainer.Critters = new Critter [1] ;

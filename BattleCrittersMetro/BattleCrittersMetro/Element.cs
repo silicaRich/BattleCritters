@@ -14,7 +14,8 @@ namespace BattleCrittersMetro
         Wind,
         Posion,
         Ice,
-        Grass
+        Grass,
+        Rock
     }
 
     public class Element : GameObject
