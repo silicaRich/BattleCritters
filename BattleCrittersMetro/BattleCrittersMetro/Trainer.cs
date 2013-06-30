@@ -22,7 +22,8 @@ namespace BattleCrittersMetro
 
         }
 
-        public static Trainer TrainerTest(){
+        public static Trainer TrainerTest()
+        {
 
             Trainer trainer = new Trainer()
             {
@@ -33,10 +34,13 @@ namespace BattleCrittersMetro
                 Location = "Home",
             };
 
-            trainer.Critters = new Critter [5] ;
-            /*trainer.Critters[0] = ;
-            trainer.Critters[1] = ;
-            trainer.Critters[2] = ;*/
+            trainer.Critters = new Critter [1] ;
+            trainer.Critters[0] = Critter.CritterTest();
+
+            //trainer.texture
+
+
+
             return trainer;
         }
 
