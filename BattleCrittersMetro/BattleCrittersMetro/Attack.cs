@@ -20,6 +20,7 @@ namespace BattleCrittersMetro
 
         //public Attack attackTest(){
 
+<<<<<<< HEAD
         //    Attack throwRock = new Attack()
         //        {
         //            Name = "Throw Rock",
@@ -28,5 +29,18 @@ namespace BattleCrittersMetro
         //            ElementType = element.ElementType.Rock,
         //        };
         // }
+=======
+            Attack throwRock = new Attack()
+                {
+                Name = "Throw Rock",
+                Damage = 5,
+                ManaCost = 10,
+                Element = new Element[] { 
+                    new Element(ElementType.Rock) 
+                },
+                };
+            return throwRock;
+         }
+>>>>>>> df067bd35ef9a61e1bcb5401483f378736555c7d
     }
 }
