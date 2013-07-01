@@ -229,8 +229,8 @@ namespace BattleCrittersMetro
             movePad.texture = TextureCache.gamePad;
             movePad.drawTex = movePad.texture;
             movePad.clickedTex = movePad.texture;
-            movePad.drawColor = Color.Green;
-            movePad.clickedColor = Color.Green;
+            movePad.drawColor = Color.Blue;
+            movePad.clickedColor = Color.White;
             movePad.Click += (s, e) =>
             {
                 //move the trainer

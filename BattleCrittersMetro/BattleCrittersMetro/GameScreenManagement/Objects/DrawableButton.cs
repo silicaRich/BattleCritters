@@ -40,8 +40,8 @@ namespace BattleCrittersMetro
                 drawColor = baseColor;
                 clicked = false;
             }
-            drawTex = this.texture;
-            drawColor = baseColor;
+            //drawTex = this.texture;
+            //drawColor = baseColor;
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch sb)
