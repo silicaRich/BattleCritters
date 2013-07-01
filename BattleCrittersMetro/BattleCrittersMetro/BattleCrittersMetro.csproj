@@ -163,6 +163,8 @@
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
     <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Content\Button-A.png" />
+    <Content Include="Content\Button-B.png" />
     <Content Include="Content\MovePad.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
