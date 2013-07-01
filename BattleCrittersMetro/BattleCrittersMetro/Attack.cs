@@ -25,8 +25,11 @@ namespace BattleCrittersMetro
                 Name = "Throw Rock",
                 Damage = 5,
                 ManaCost = 10,
-                ElementType = element.ElementType.Rock,
-                }
+                Element = new Element[] { 
+                    new Element(ElementType.Rock) 
+                },
+                };
+            return throwRock;
          }
     }
 }
