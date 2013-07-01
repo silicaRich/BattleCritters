@@ -80,7 +80,7 @@ namespace BattleCrittersMetro
         protected override void Draw(GameTime gameTime)
         {
             graphicsDevice.SetRenderTarget(null); // set our target to screen
-            graphicsDevice.Clear(Color.Red);
+            graphicsDevice.Clear(Color.Black);
             // TODO: Add your drawing code here
             graphicsDevice.DepthStencilState = DepthStencilState.Default;
 
