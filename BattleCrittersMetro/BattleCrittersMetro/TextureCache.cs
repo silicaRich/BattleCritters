@@ -16,7 +16,7 @@ namespace BattleCrittersMetro
 
         public static void Load()
         {
-            gamePad = TextureCache.Texture2DFromStream(@"Content/MovePad");
+            gamePad = TextureCache.Texture2DFromStream(@"Content/MovePad.png");
         }
 
         public static Texture2D Texture2DFromStream(string path)
@@ -29,8 +29,9 @@ namespace BattleCrittersMetro
                 // use StreamReader.ReadLine or other methods to read the file data
                 t = Texture2D.FromStream(Global.game.GraphicsDevice, stream);
             }
-            catch (System.IO.FileNotFoundException)
+            catch (Exception ex)
             {
+                string s = ex.ToString();
                 // this will be thrown by OpenStream if gamedata.txt
                 // doesn't exist in the title storage location
             }

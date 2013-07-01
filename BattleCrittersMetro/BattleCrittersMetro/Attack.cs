@@ -18,15 +18,15 @@ namespace BattleCrittersMetro
 
         }
 
-        public Attack attackTest(){
+        //public Attack attackTest(){
 
-            Attack throwRock = new Attack()
-                {
-                Name = "Throw Rock",
-                Damage = 5,
-                ManaCost = 10,
-                ElementType = element.ElementType.Rock,
-                }
-         }
+        //    Attack throwRock = new Attack()
+        //        {
+        //            Name = "Throw Rock",
+        //            Damage = 5,
+        //            ManaCost = 10,
+        //            ElementType = element.ElementType.Rock,
+        //        };
+        // }
     }
 }

@@ -22,7 +22,6 @@ namespace BattleCrittersMetro
             Global.game = this;
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            TextureCache.Load();
         }
 
         /// <summary>
@@ -36,6 +35,7 @@ namespace BattleCrittersMetro
             // TODO: Add your initialization logic here
             graphicsDevice = _graphics.GraphicsDevice;
             spriteBatch = new SpriteBatch(graphicsDevice);
+            TextureCache.Load();
             this.screens = new List<Screen>();
             this.gameScreen = new GameScreen(this);
             this.screens.Add(gameScreen);
@@ -82,9 +82,9 @@ namespace BattleCrittersMetro
         protected override void Draw(GameTime gameTime)
         {
             graphicsDevice.SetRenderTarget(null); // set our target to screen
-            graphicsDevice.Clear(Color.Black);
+            graphicsDevice.Clear(Color.Red);
             // TODO: Add your drawing code here
-            graphicsDevice.DepthStencilState = DepthStencilState.Default;
+            //graphicsDevice.DepthStencilState = DepthStencilState.Default;
 
 
             spriteBatch.GraphicsDevice.DepthStencilState = new DepthStencilState() { DepthBufferEnable = true };

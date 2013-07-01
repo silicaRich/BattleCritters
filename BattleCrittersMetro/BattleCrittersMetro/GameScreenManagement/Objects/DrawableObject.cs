@@ -8,6 +8,7 @@ namespace BattleCrittersMetro
     {
         public object Tag;
         public Vector2 position;
+        public Rectangle area;
         public Texture2D texture;
         public Color color;
         public delegate void ClickEventHandler(object source, ClickEventArgs e);
@@ -20,7 +21,14 @@ namespace BattleCrittersMetro
         }
         public virtual void Draw(GameTime gameTime, SpriteBatch sb)
         {
-            sb.Draw(texture, new Rectangle((int)position.X, (int)position.Y, texture.Width, texture.Height), color);
+            if(this.area == null)
+                this.area = new Rectangle(
+                (int)position.X, 
+                (int)position.Y,
+                (int)position.X + texture.Width, 
+                (int)position.Y + texture.Height);
+
+            sb.Draw(texture, area, color);
         }
 
         public virtual void Update(Game game, GameTime gameTime)
