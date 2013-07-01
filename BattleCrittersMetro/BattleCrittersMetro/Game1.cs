@@ -15,7 +15,6 @@ namespace BattleCrittersMetro
         public List<Screen> screens; //all screens
         public GameScreen gameScreen; //game screen ref in screens
         public PauseMenuScreen pauseMenuScreen; //pause screen ref in screens
-        public SpriteBatch spriteBatch;
 
         public Game1()
         {
@@ -34,7 +33,6 @@ namespace BattleCrittersMetro
         {
             // TODO: Add your initialization logic here
             graphicsDevice = _graphics.GraphicsDevice;
-            spriteBatch = new SpriteBatch(graphicsDevice);
             TextureCache.Load();
             this.screens = new List<Screen>();
             this.gameScreen = new GameScreen(this);
@@ -81,21 +79,21 @@ namespace BattleCrittersMetro
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            //graphicsDevice.SetRenderTarget(null); // set our target to screen
-            //graphicsDevice.Clear(Color.Red);
+            graphicsDevice.SetRenderTarget(null); // set our target to screen
+            graphicsDevice.Clear(Color.Red);
             // TODO: Add your drawing code here
-            //graphicsDevice.DepthStencilState = DepthStencilState.Default;
+            graphicsDevice.DepthStencilState = DepthStencilState.Default;
 
 
-            //spriteBatch.GraphicsDevice.DepthStencilState = new DepthStencilState() { DepthBufferEnable = true };
-            spriteBatch.Begin();
+            _spriteBatch.GraphicsDevice.DepthStencilState = new DepthStencilState() { DepthBufferEnable = true };
+            _spriteBatch.Begin();
 
             //2d animations go here.
 
             foreach (Screen s in screens)
-                s.Draw(gameTime, spriteBatch);
+                s.Draw(gameTime, _spriteBatch);
 
-            spriteBatch.End();
+            _spriteBatch.End();
             base.Draw(gameTime);
         }
     }

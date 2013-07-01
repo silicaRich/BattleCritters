@@ -46,9 +46,7 @@ namespace BattleCrittersMetro
 
         public override void Draw(GameTime gameTime, SpriteBatch sb)
         {
-            base.Draw(gameTime, sb);
-            //if(drawTex != null)
-            //    sb.Draw(drawTex, area, drawColor);
+            sb.Draw(drawTex, position, drawColor);
         }
 
     }
