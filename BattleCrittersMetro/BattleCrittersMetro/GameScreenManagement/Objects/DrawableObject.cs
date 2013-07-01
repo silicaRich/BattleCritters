@@ -21,14 +21,14 @@ namespace BattleCrittersMetro
         }
         public virtual void Draw(GameTime gameTime, SpriteBatch sb)
         {
-            if(this.area == null)
-                this.area = new Rectangle(
-                (int)position.X, 
-                (int)position.Y,
-                (int)position.X + texture.Width, 
-                (int)position.Y + texture.Height);
-
-            sb.Draw(texture, area, color);
+            //if(this.area == null)
+            //    this.area = new Rectangle(
+            //    (int)position.X, 
+            //    (int)position.Y,
+            //    (int)position.X + texture.Width, 
+            //    (int)position.Y + texture.Height);
+            sb.Draw(texture, position, color);
+            //sb.Draw(texture, area, color);
         }
 
         public virtual void Update(Game game, GameTime gameTime)

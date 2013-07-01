@@ -16,7 +16,7 @@ namespace BattleCrittersMetro
 
         public static void Load()
         {
-            gamePad = TextureCache.Texture2DFromStream(@"Content/MovePad.png");
+            gamePad = TextureCache.Texture2DFromStream(@"Content/MovePad2.png");
         }
 
         public static Texture2D Texture2DFromStream(string path)

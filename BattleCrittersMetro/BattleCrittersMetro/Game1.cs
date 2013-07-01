@@ -81,13 +81,13 @@ namespace BattleCrittersMetro
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            graphicsDevice.SetRenderTarget(null); // set our target to screen
-            graphicsDevice.Clear(Color.Red);
+            //graphicsDevice.SetRenderTarget(null); // set our target to screen
+            //graphicsDevice.Clear(Color.Red);
             // TODO: Add your drawing code here
             //graphicsDevice.DepthStencilState = DepthStencilState.Default;
 
 
-            spriteBatch.GraphicsDevice.DepthStencilState = new DepthStencilState() { DepthBufferEnable = true };
+            //spriteBatch.GraphicsDevice.DepthStencilState = new DepthStencilState() { DepthBufferEnable = true };
             spriteBatch.Begin();
 
             //2d animations go here.
