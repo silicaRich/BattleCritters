@@ -214,6 +214,7 @@ namespace BattleCrittersMetro
         {
             //when the game screen is initalized
             this.screenObjs.Add("GamePad", GetMovePad());
+            this.screenObjs.Add("ButtonA", GetButtonA());
              
 
             trainer = Trainer.TrainerTest();
@@ -238,6 +239,20 @@ namespace BattleCrittersMetro
             return movePad;
         }
 
+        public DrawableButton GetButtonA()
+        {
+            DrawableButton buttonA = new DrawableButton();
+            buttonA.position = new Vector2(1070f, 472f);
+            buttonA.setTexture = TextureCache.buttonA;
+            buttonA.drawColor = Color.LightGray;
+            buttonA.clickedColor = Color.White;
+            buttonA.color = Color.LightGray;
+            buttonA.Click += (s, e) =>
+            {
+                //Perform action on click of A 
+            };
+            return buttonA;
+        }
         //please collapse this constructor, it has reuseable code in it. Refer to the GameScreenUpdated Method
         public override void Update(Game1 game, GameTime gameTime)
         {

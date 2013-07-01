@@ -13,10 +13,12 @@ namespace BattleCrittersMetro
     {
         public static Texture2D blackBg;
         public static Texture2D gamePad;// = 
+        public static Texture2D buttonA;
 
         public static void Load()
         {
             gamePad = TextureCache.Texture2DFromStream(@"Content/MovePad.png");
+            buttonA = TextureCache.Texture2DFromStream(@"Content/Button-A.png");
         }
 
         public static Texture2D Texture2DFromStream(string path)
