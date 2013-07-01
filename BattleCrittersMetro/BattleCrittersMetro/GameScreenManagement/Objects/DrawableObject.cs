@@ -10,6 +10,16 @@ namespace BattleCrittersMetro
         public Vector2 position;
         public Rectangle area;
         public Texture2D texture;
+        public Texture2D setTexture
+        {
+            set
+            {
+                this.texture = value;
+
+                this.area = new Rectangle(
+                (int)position.X, (int)position.Y, value.Width, value.Height);
+            }
+        }
         public Color color;
         public delegate void ClickEventHandler(object source, ClickEventArgs e);
         public delegate void UpdateEventHandler(object source, UpdateEventArgs e);
@@ -27,7 +37,7 @@ namespace BattleCrittersMetro
             //    (int)position.Y,
             //    (int)position.X + texture.Width, 
             //    (int)position.Y + texture.Height);
-            sb.Draw(texture, position, color);
+            sb.Draw(texture, area, color);
             //sb.Draw(texture, area, color);
         }
 

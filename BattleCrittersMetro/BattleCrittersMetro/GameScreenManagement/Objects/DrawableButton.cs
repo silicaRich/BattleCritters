@@ -9,10 +9,18 @@ namespace BattleCrittersMetro
     {
         public Texture2D drawTex;
         public Texture2D clickedTex;
+        public Texture2D setTexture
+        {
+            set
+            {
+                this.clickedTex = value;
+                this.texture = value;
+                this.drawTex = value;
+                this.area = new Rectangle( (int)position.X, (int)position.Y, value.Width, value.Height);
+            }
+        }
         public Color drawColor;
-        public Color baseColor;
         public Color clickedColor;
-        public Rectangle area;
         public event ClickEventHandler Click;
         public event ClickEventHandler UnClick;
         public bool clicked = false;
@@ -36,19 +44,16 @@ namespace BattleCrittersMetro
             {
                 if (UnClick != null)
                     UnClick(this, new ClickEventArgs(clickPoint));
-                drawTex = this.texture;
-                drawColor = baseColor;
                 clicked = false;
             }
-            //drawTex = this.texture;
-            //drawColor = baseColor;
+            drawTex = this.texture;
+            drawColor = this.color;
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch sb)
         {
             sb.Draw(drawTex, position, drawColor);
         }
-
     }
 
 
