@@ -9,7 +9,7 @@ namespace BattleCrittersMetro
     {
         public Texture2D drawTex;
         public Texture2D clickedTex;
-        public Texture2D setTexture
+        public new Texture2D setTexture
         {
             set
             {

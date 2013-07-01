@@ -224,17 +224,13 @@ namespace BattleCrittersMetro
         public DrawableButton GetMovePad()
         {
             DrawableButton movePad = new DrawableButton();
-            movePad.position = new Vector2(100f, 100f);
-
+            movePad.position = new Vector2(40f, 472f);
             movePad.setTexture = TextureCache.gamePad;
-            movePad.drawTex = movePad.texture;
-            movePad.clickedTex = movePad.texture;
-            movePad.drawColor = Color.Blue;
+            movePad.drawColor = Color.LightGray;
             movePad.clickedColor = Color.White;
-            movePad.color = Color.Blue;
+            movePad.color = Color.LightGray;
             movePad.Click += (s, e) =>
             {
-                string sa = null;
                 //move the trainer
             };
 
