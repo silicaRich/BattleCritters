@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Microsoft.Xna.Framework.Graphics;
 namespace BattleCrittersMetro
 {
-    public class Trainer : GameObject
+    public class Trainer : DrawableObject
     {
         public string Name;
         public char Gender;
@@ -37,7 +37,10 @@ namespace BattleCrittersMetro
             trainer.Critters = new Critter [1] ;
             trainer.Critters[0] = Critter.CritterTest();
 
-            //trainer.texture
+            //get bitmap
+
+
+            //trainer.texture = TextureCache.gamePad;
 
 
 

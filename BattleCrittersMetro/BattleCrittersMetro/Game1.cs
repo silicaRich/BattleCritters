@@ -19,8 +19,10 @@ namespace BattleCrittersMetro
 
         public Game1()
         {
+            Global.game = this;
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            TextureCache.Load();
         }
 
         /// <summary>

@@ -8,7 +8,6 @@ namespace BattleCrittersMetro
     public class DrawableButton : DrawableObject
     {
         public Texture2D drawTex;
-        public Texture2D baseTex;
         public Texture2D clickedTex;
         public Color drawColor;
         public Color baseColor;
@@ -24,7 +23,8 @@ namespace BattleCrittersMetro
 
         public override void OnClick(Vector2 clickPoint)
         {
-            drawTex = clickedTex;
+            if(clickedTex != null)
+                drawTex = clickedTex;
             drawColor = clickedColor;
             if (this.Click != null)
                 this.Click(this, new ClickEventArgs(clickPoint));
@@ -36,17 +36,18 @@ namespace BattleCrittersMetro
             {
                 if (UnClick != null)
                     UnClick(this, new ClickEventArgs(clickPoint));
-                drawTex = baseTex;
+                drawTex = this.texture;
                 drawColor = baseColor;
                 clicked = false;
             }
-            drawTex = baseTex;
+            drawTex = this.texture;
             drawColor = baseColor;
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch sb)
         {
-            sb.Draw(drawTex, area, drawColor);
+            if(drawTex != null)
+                sb.Draw(drawTex, area, drawColor);
         }
 
     }

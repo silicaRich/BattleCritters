@@ -3,13 +3,14 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 namespace BattleCrittersMetro
 
 {
     public class GameScreen : Screen
     {
         public Trainer trainer;
-
+        public List<DrawableObject> gameObjects;
         //please collapse this constructor, it has reuseable code in it. Refer to the Game Screen Initalized Method
         public GameScreen(Game1 game) : base()
         {
@@ -213,10 +214,35 @@ namespace BattleCrittersMetro
         public void GameScreenInitialized(Game1 game)
         {
             //when the game screen is initalized
+
+            gameObjects = new List<DrawableObject>();
+            this.screenObjs.Add("GamePad", GetMovePad());
+             
+
             trainer = Trainer.TrainerTest();
 
 
         }
+
+        public DrawableButton GetMovePad()
+        {
+            DrawableButton movePad = new DrawableButton();
+            movePad.position = new Vector2(300f, 300f);
+
+            movePad.texture = TextureCache.gamePad;
+            movePad.drawTex = movePad.texture;
+            movePad.clickedTex = movePad.texture;
+            movePad.drawColor = Color.White;
+            movePad.clickedColor = Color.White;
+            movePad.Click += (s, e) =>
+            {
+                //move the trainer
+            };
+
+
+            return movePad;
+        }
+
         //please collapse this constructor, it has reuseable code in it. Refer to the GameScreenUpdated Method
         public override void Update(Game1 game, GameTime gameTime)
         {

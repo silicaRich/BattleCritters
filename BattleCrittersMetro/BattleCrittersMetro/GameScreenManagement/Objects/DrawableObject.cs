@@ -7,7 +7,9 @@ namespace BattleCrittersMetro
     public abstract class DrawableObject
     {
         public object Tag;
-
+        public Vector2 position;
+        public Texture2D texture;
+        public Color color;
         public delegate void ClickEventHandler(object source, ClickEventArgs e);
         public delegate void UpdateEventHandler(object source, UpdateEventArgs e);
         public virtual void OnClick(Vector2 clickPoint)
@@ -18,6 +20,7 @@ namespace BattleCrittersMetro
         }
         public virtual void Draw(GameTime gameTime, SpriteBatch sb)
         {
+            sb.Draw(texture, new Rectangle((int)position.X, (int)position.Y, texture.Width, texture.Height), color);
         }
 
         public virtual void Update(Game game, GameTime gameTime)

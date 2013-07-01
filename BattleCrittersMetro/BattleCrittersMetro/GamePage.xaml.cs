@@ -1,6 +1,7 @@
 ﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using MonoGame.Framework;
+using System;
 
 
 namespace BattleCrittersMetro
@@ -17,7 +18,15 @@ namespace BattleCrittersMetro
             this.InitializeComponent();
 
             // Create the game.
-            _game = XamlGame<Game1>.Create(launchArguments, Window.Current.CoreWindow, this);
+            try
+            {
+                _game = XamlGame<Game1>.Create(launchArguments, Window.Current.CoreWindow, this);
+            }
+            catch (Exception e)
+            {
+                string s = e.ToString();
+                throw new Exception(s);
+            }
         }
     }
 }

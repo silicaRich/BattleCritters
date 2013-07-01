@@ -5,18 +5,21 @@ namespace BattleCrittersMetro
 {
     public class DrawableImage : DrawableObject
     {
-        public Texture2D texture;
-        public Color color;
-        public Rectangle area;
 
         public DrawableImage()
         {
+
         }
 
-        public override void Draw(GameTime gameTime, SpriteBatch sb)
+        public virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            sb.Draw(texture, area, color);
+            spriteBatch.Draw(texture, new Rectangle((int)position.X, (int)position.Y, texture.Width, texture.Height), color);
         }
 
+
+        public virtual void Update(GameTime gameTime)
+        {
+
+        }
     }
 }
